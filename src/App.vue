@@ -1,8 +1,8 @@
 <template>
   <div id="app">
- <caixas :caixinhas="caixinhas"/>
- <ferramentas :caixinhas="caixinhas" @alteraCor="alteraCor($event)" @alterouTexto="alteraTexto($event)"/>
-
+   <caixas :caixinhas="caixinhas"/>  
+    <ferramentas :caixinhas="caixinhas" @alteraCor ="alteraCor($event)" @alterouTexto="alteraTexto($event)"/> 
+   
   </div>
 </template>
 
@@ -18,26 +18,28 @@ export default {
   return{
     caixinhas: [{
       titulo: "1",
-      cor: "background: red"
-},
-    {
-      titulo: "2",
       cor: "background: blue"
 
      
      }, {
-      titulo: "3",
+      titulo: "2",
       cor: "background: orange"
 
-    }]
+    },{
+      titulo: "3",
+      cor: "background: red"
+      }]
   }
-} , methods: {
-  alteraCor: function(event){
-this.caixinhas[event.caixa].cor = event.cor
-  } , alteraTexto: function(event){
-     this.caixinhas[event.caixa].titulo = event.titulo
+} , methods:{
+    alteraCor: function(event){
+      this.caixinhas[event.caixa].cor = event.cor
+    },
+    alteraTexto: function(event){
+       this.caixinhas[event.caixa].titulo = event.titulo
+
+     
+    }
   }
-}
 }
 </script>
 

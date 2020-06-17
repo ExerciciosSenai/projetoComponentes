@@ -12,10 +12,12 @@
            <div id="paleta">
                
                <div class="cor" :style="cor" v-for="(cor,index) in cores" :key="index" @click="alteraCor(cor)"></div>
+
+              
            </div>
            <div>
-               <input type="text" placeholder="Digite o nome da caixa" v-model="titulo">
-               <button @click="alterarTexto">OK</button>
+                <input type="text" placeholder="Digite o nome da caixa" v-model="titulo">
+<button @click="alteraTexto">OK</button><br>
                
            </div>
      
@@ -40,12 +42,12 @@ data: function(){
         })
     } , 
     
-    alteraTexto: function() {
-        this.$emit('alterouTexto', {
-            titulo: this.titulo ,
-            caixa : this.caixaSel
-        })
-    }
+  alteraTexto: function(){
+            this.$emit('alterouTexto',{
+                titulo: this.titulo,
+                caixa:this.caixaSel
+            })
+        }
 }
 }
 </script>
